@@ -1,34 +1,47 @@
 #artists-grid{
     background: pink;
-    width: 1217px;
-    height: auto;
+    /* width: 100vw; */
+    max-width: 1217px;
+    /* height: 100vh; */
 }
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
+.artists-grid-wrap{
+    max-width: 1217px;
+    background-color: skyblue
+    /* width: 100vw; */
 }
-.artist-name{
+/* .artist-name{
     background: skyblue;
-    width: 320px;
-    height: 320px;
+    width: 9.2vw;
+    height: 60vh;
+} */
+span{
+    opacity: 1;
+    transition: .25s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+span:hover{
+    display: block;
 }
 a{
     font-size: calc(0.5em + 2vmin) !important;
-    font-family: Avenir;
+    /* font-family: Avenir; */
     font-weight: 700;
     letter-spacing: 0.1em;
     line-height: 1em;
     cursor: pointer;
 }
-.ara{
-    background-image: url("../img/agency_ara.jpg");
-    padding-bottom: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.choreographer-grid{
+    width: calc(33% - 3%);
+    padding: 1.5%;
+    position: relative;
 }
+
+/* [pop-up] */
 #popup{
     display: none;
     width: 100%;
@@ -69,3 +82,65 @@ a{
 .text-center{
     text-align: center;
 }
+.image-grid{
+    padding-bottom: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* [choreographers] */
+/* .ara{
+    background-image: url("../img/agency_ara.jpg");
+}
+.austin{
+    background-image: url("../img/agency_austin.jpg");
+}
+.enoh{
+    background-image: url("../img/agency_eunho.jpg");
+}
+.hyojin{
+    background-image: url("../img/agency_hyojin.jpg");
+}
+.isabelle{
+    background-image: url("../img/agency_isabelle.jpg");
+}
+.jinlee{
+    background-image: url("../img/agency_jinlee.jpg");
+}
+.jinwoo{
+    background-image: url("../img/agency_jinwoo.jpg");
+}
+.junliu{
+    background-image: url("../img/agency_jun-liu.jpg");
+}
+.junsun{
+    background-image: url("../img/agency_junsun.jpg");
+}
+.koosung{
+    background-image: url("../img/agency_koosung.jpg");
+}
+.lia{
+    background-image: url("../img/agency_lia.jpg");
+}
+.mayjlee{
+    background-image: url("../img/agency_mayj.jpg");
+}
+.mina{
+    background-image: url("../img/agency_mina.jpg");
+}
+.minny{
+    background-image: url("../img/agency_minyoung.jpg");
+}
+.shawn{
+    background-image: url("../img/agency_shawn.jpg");
+}
+.tina{
+    background-image: url("../img/agency_tina.jpg");
+}
+.yoojung{
+    background-image: url("../img/agency_yoojung.jpg");
+}
+.youjin{
+    background-image: url("../img/agency_youjin.jpg");
+} */
