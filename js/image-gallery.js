@@ -1,117 +1,132 @@
 var image_gallery = (function () {
 
     var init = function() {
-        choregorapherGrid();  // 변수에 함수를 저장하여 함수를 정의 함. 익명 함수. common.js으로 빼고 페이지 뜨면 바로 실행시킴
+        choreographerGrid();
+        choreographerAlbum();
     }
     
-    function choregorapherGrid(){  // choreographerGrid 이라는 함수를 만듦
+    function choreographerGrid() {
+        
+        var arrayLength = getArtistsData.length;
 
-        var dataChoreographerGrid;
-        var arrayLength = getArtistsData.length; // 총 강사 인원 (사진)이 몇명(개) 인지 그 숫자를 변수 arrayLength 안에 담음
+        var imageGridTag = '';
 
-        var tag = '';  //지역 변수. 문자열을 담을(은) 변수 tag
-        for (var i = 0; i < arrayLength; i++) {  //for 반복문
-            var tempGetArtistsData = getArtistsData[i];  // 변수 temp(일시적으로, 한번 쓰고 버릴)GetArtistsData 안에 getArtistsData index 값 저장
-            console.log(tempGetArtistsData);
-
-            var getArtistsDataName = getArtistsData[i].name;  // getArtistsData에 해당하는 인덱스 값의 이름을 변수 getArtistsDataName에 저장
-            console.log(getArtistsDataName);
+        for (var i = 0; i < arrayLength; i++){
             
-            var getArtistsDataPicture = getArtistsData[i].picture; // getArtistsData에 해당하는 인덱스 값의 사진을 변수 getArtistsDataPicture에 저장. 사진의 경로를 저장하므로 문자열
-            console.log(getArtistsDataPicture);
+            var tempArtistsDataIndex = getArtistsData[i];
+
+            var artistsDataName = getArtistsData[i].name;
             
-            var tempTag = '<div class="choreographer-grid">' +  // 지역변수 tempTag 안에 append 시킬 .choreograrpher-grid 레이아웃을 문자열로 저장. 
-                            '<div class="image-grid" style="background-image: url('+getArtistsDataPicture+');">' +  //사진 경로를 html에다가 css 방법으로 넣어줌
+            var artistsDataProfile = getArtistsData[i].profile;
+
+            var tag = '<div class="choreographer-grid">' +
+                            '<div class="image-grid" style="background-image: url('+artistsDataProfile+');">' +
                                 '<div class="artist-name text-center">' +
-                                    '<span>' +
+                                    '<span>' + 
                                         '<a href="#">' +
-                                            getArtistsDataName +
+                                            artistsDataName +
                                         '</a>' +
                                     '</span>' +
                                 '</div>' +
                             '</div>' +
-                        '</div>';
-                        console.log(tag);
+                        '</div>'
+                        
+            imageGridTag = imageGridTag + tag;
+        }
+        
+        $("#choreographer-grid-wrapper").html(imageGridTag);
 
-            tag = tag + tempTag;  // 변수 tag는 변수 
-                       
-        } 
-        console.log(tag);
-        $("#choreographer-grid-wrapper").html(tag);
-    } 
+    }
+
+    function choreographerAlbum() {
+
+        $(".artist-name").on("click", function () {
+            $("#album-overlay").show();
+            $("body").css("overflow", "hidden");
+        })
+
+        $(".overlay-close-btn").on("click", function () {
+            $("#album-overlay").hide();
+            $("body").css("overflow", "scroll");
+        })
+
+        console.log(choreographerAlbum);
+    }
+    
+        
 
     var getArtistsData = [
         {
             "name" : "Ara Cho",
-            "picture" : "../img/agency_ara.jpg"
+            "profile" : "../img/agency_ara.jpg"
         },
         {
             "name" : "Austin Pak",
-            "picture" : "../img/agency_austin.jpg"
+            "profile" : "../img/agency_austin.jpg"
         },
         {
             "name" : "Enoh",
-            "picture" : "../img/agency_eunho.jpg"
+            "profile" : "../img/agency_eunho.jpg"
         },
         {
             "name" : "Hyojin Choi",
-            "picture" : "../img/agency_hyojin.jpg"
+            "profile" : "../img/agency_hyojin.jpg"
         },
         {
             "name" : "Isabelle",
-            "picture" : "../img/agency_isabelle.jpg"
+            "profile" : "../img/agency_isabelle.jpg"
         },
         {
             "name" : "Jin Lee",
-            "picture" : "../img/agency_jinlee.jpg"
+            "profile" : "../img/agency_jinlee.jpg"
         },
         {
             "name" : "Jinwoo Yoon",
-            "picture" : "../img/agency_jinwoo.jpg"
+            "profile" : "../img/agency_jinwoo.jpg"
         },
         {
             "name" : "Jun Liu",
-            "picture" : "../img/agency_jun-liu.jpg"
+            "profile" : "../img/agency_jun-liu.jpg"
         },
         {
             "name" : "Junsun Yoo",
-            "picture" : "../img/agency_junsun.jpg"
+            "profile" : "../img/agency_junsun.jpg"
         },
         {
             "name" : "Koosung Jung",
-            "picture" : "../img/agency_koosung.jpg"
+            "profile" : "../img/agency_koosung.jpg"
         },
         {
             "name" : "Lia Kim",
-            "picture" : "../img/agency_lia.jpg"
+            "profile" : "../img/agency_lia.jpg"
         },
         {
             "name" : "May J Lee",
-            "picture" : "../img/agency_mayj.jpg"
+            "profile" : "../img/agency_mayj.jpg"
         },
         {
             "name" : "Mina Myoung",
-            "picture" : "../img/agency_mina.jpg"
+            "profile" : "../img/agency_mina.jpg"
         },
         {
             "name" : "Minny Park",
-            "picture" : "../img/agency_minyoung.jpg"
+            "profile" : "../img/agency_minyoung.jpg"
         },
         {
             "name" : "Shawn",
-            "picture" : "../img/agency_shawn.jpg"
+            "profile" : "../img/agency_shawn.jpg"
         },
         {
             "name" : "Tina Boo",
-            "picture" : "../img/agency_tina.jpg"
+            "profile" : "../img/agency_tina.jpg"
         },
         {
             "name" : "Yoojung Lee",
-            "picture" : "../img/agency_yoojung.jpg"
+            "profile" : "../img/agency_yoojung.jpg"
         },
         {
             "name" : "Youjin Kim",
-            "picture" : "../img/agency_youjin.jpg"
+            "profile" : "../img/agency_youjin.jpg"
         }
     ]
 
