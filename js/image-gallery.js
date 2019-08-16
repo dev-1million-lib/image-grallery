@@ -13,8 +13,6 @@ var image_gallery = (function () {
 
         for (var i = 0; i < arrayLength; i++){
             
-            var tempArtistsDataIndex = getArtistsData[i];
-
             var artistsDataName = getArtistsData[i].name;
             
             var artistsDataProfile = getArtistsData[i].profile;
@@ -49,8 +47,6 @@ var image_gallery = (function () {
             $("#album-overlay").hide();
             $("body").css("overflow", "scroll");
         })
-
-        console.log(choreographerAlbum);
     }
     
         
