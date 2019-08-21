@@ -10,47 +10,9 @@ ul, li{
 a{
     text-decoration: none;
 }
-#artists-grid{
-    max-width: 1217px;
-}
-.artists-grid-wrap{
-    max-width: 1217px;
-}
-.artist-name{
-    /* background: skyblue;
-    width: 9.2vw;
-    height: 60vh; */
-    display: block;
-}
-span{
-    opacity: 1;
-    transition: .25s ease;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-}
-span:hover{
-    display: block;
-}
-.artist-name a{
-    font-size: calc(0.5em + 2vmin) !important;
-    font-family: Avenir;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    line-height: 1em;
-    cursor: pointer;
-}
-.choreographer-grid{
-    width: calc(33% - 3%);
-    padding: 1.5%;
-    position: relative;
-}
 
 /* [album overlay] */
-#album-overlay{
+#om-artist-grid-album-overlay{
     display: none;
     width: 100%;
     height: 100vh;
@@ -63,37 +25,42 @@ span:hover{
     scroll-behavior: smooth;
     z-index: 99999;
 }
-.album-overlay-bg{
+.om-artist-grid-album-overlay-bg{
     width: 100vw;
     height: 100vh;
     background-color: #222222;
     opacity: 0.8;
     position: absolute;
 }
-.album-overlay-wrap{
+.om-artist-grid-album-overlay-wrap{
     width: 1300px;
     height: 100vh;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
 }
-.album{
+.om-artist-grid-album-overlay-album{
     width: 1300px;
     height: 95%;
     margin: 0 auto;
     position: relative;
 }
-.prev{
+.om-artist-grid-album-overlay-prev{
     position: absolute;
     left: 0;
     top: 50%;
+    cursor: pointer;
 }
-.next{
+.om-artist-grid-album-overlay-next{
     position: absolute;
     right: 0;
     top: 50%;
+    cursor: pointer;
 }
-.album-overlay-img{
+.album-overlay-wrap{
+    width: 100vw;
+}
+.album-overlay-img-wrap{
     width: 60%;
     overflow: hidden;
     height: auto;
@@ -104,12 +71,7 @@ span:hover{
     scroll-behavior: smooth;
     overflow: hidden;
 }
-.album-overlay-img::after{
-    content: "";
-    clear: both;
-    display: table;
-}
-.album-overlay-img li{
+.album-overlay-img-wrap li{
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -121,31 +83,107 @@ span:hover{
     justify-content: center;
 }
 
-.album-overlay-img li img{
+.album-overlay-img-wrap li{
+    padding-bottom: 100%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
 }
 
 .overlay-close-btn{
-    width: 11%;
-    height: 12px;
+    width: 100%;
+    height: auto;
     cursor: pointer;
-    margin: 0 auto;
     color: white;
-    font-size: 20px;
     letter-spacing: 2.22px;
+    display: flex;
+    justify-content: center;
     font-family: Avenir;
 }
 
+.overlay-close-btn-img{
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
 .overlay-close-btn img{
     width: 100%;
 }
+.overlay-close-btn-span{
+    color: white;
+    text-align: center;
+    line-height: 27px;
+    font-size: 20px;
+}
+
+/* [강사님 그리드] */
+#om-artist-grid{
+    max-width: 1217px;
+}
+.om-artist-wrap{
+    max-width: 1217px;
+}
+.om-choreographer-grid{
+    width: calc(33% - 3%);
+    padding: 1.5%;
+    position: relative;
+}
+
 /* [common] */
 .text-center{
     text-align: center;
 }
-.image-grid{
+.om-choreographer-image-grid{
     padding-bottom: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+.om-choreographer-image-grid span{
+    transition: .25s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+.om-choreographer-image-grid-artist-name {
+    font-size: calc(0.5em + 2vmin) !important;
+    font-family: Avenir;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1em;
+    cursor: pointer;
+}
+.om-choreographer-image-grid-artist-name a {
+    opacity: 0;
+}
+
+/* [미디어쿼리] */
+@media (min-width: 320px) and (max-width: 767px){
+    .om-artist-grid-album-overlay-wrap{
+        max-width: 1300px;
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-album{
+        max-width: 1300px;
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-prev{
+        width: 5vw;
+    }
+    .om-artist-grid-album-overlay-prev img{
+        width: 100%;
+    }
+    .album-overlay-img-wrap{
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-next{
+        width: 5vw;
+    }
+    .om-artist-grid-album-overlay-next img{
+        width: 100%;
+    }
 }

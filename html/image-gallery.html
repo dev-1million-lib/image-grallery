@@ -17,41 +17,36 @@
     <script src="../js/common.js"></script> 
 </head>
 <body>
-    
-    <div id="album-overlay">
-        <div class="album-overlay-bg"></div>
-        <div class="album-overlay-wrap">
-            <div class="album row">
-                <div class="prev">
+    <!-- 강사님 이름 클릭했을때 뜨는 오버레이 -->
+    <div id="om-artist-grid-album-overlay">  
+        <!-- 오버레이 떴을때 백그라운드 오파시티 주는 div -->
+        <div class="om-artist-grid-album-overlay-bg"></div> 
+        <div class="om-artist-grid-album-overlay-wrap"> 
+            <div class="om-artist-grid-album-overlay-album row"> 
+                <div class="om-artist-grid-album-overlay-prev"> 
                     <img src="../img/arrow_left.svg">
                 </div>
-                <div class="album-loop-wrap" style="width: 100vw;">
-                    <ul class="album-overlay-img">
-                        <li>
-                            <img src="https://s3.ap-northeast-2.amazonaws.com/one-m/choreographer-resources/template_a/Ara+Cho/crop/ara_01.jpg">
-                        </li>
-                        <li>
-                            <img src="https://s3.ap-northeast-2.amazonaws.com/one-m/choreographer-resources/template_a/Ara+Cho/crop/ara_02.jpg">
-                        </li>
-                        <li>
-                            <img src="https://s3.ap-northeast-2.amazonaws.com/one-m/choreographer-resources/template_a/Ara+Cho/crop/ara_03.jpg">
-                        </li>
+                <div class="album-overlay-wrap">
+                    <ul class="album-overlay-img-wrap">
+                        
                     </ul>
                 </div>
-                <div class="next">
+                <div class="om-artist-grid-album-overlay-next">
                     <img src="../img/arrow_right.svg">
                 </div>
             </div>
             <div class="overlay-close-btn col">
-                <!-- <img src="../img/delete_white.svg"> -->
-                <span>Close</span>
+                <div class="overlay-close-btn-img">
+                    <img src="../img/delete_white.svg">
+                </div>
+                <span class="overlay-close-btn-span">Close</span>
             </div>
         </div>
     </div>
-    
-    <div id="artists-grid" class="row mx-auto">
-        <div class="col col-12 my-5 mx-auto artists-grid-wrap">
-            <div id="choreographer-grid-wrapper" class="row justify-content-center"></div>
+    <div id="om-artists-grid" class="row mx-auto">  
+        <div class="col col-12 my-5 mx-auto om-artists-grid-wrap">
+            <!-- 강사님 이미지 뜨는 그리드 -->
+            <div id="om-artists-grid-choreographer-wrapper" class="row justify-content-center"></div>
         </div>
     </div>
 </body>
