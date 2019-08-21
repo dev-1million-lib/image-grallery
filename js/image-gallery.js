@@ -68,6 +68,7 @@ var image_gallery = (function () {
                 && !$(".om-artist-grid-album-overlay-prev img").is(e.target)
                 && !$(".om-artist-grid-album-overlay-next img").is(e.target)) {
                 overlay.hide();
+                $("body").css("overflow", "scroll");
             }
         });
     }
