@@ -15,7 +15,8 @@ a{
 #om-artist-grid-album-overlay{
     display: none;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
+    height: 109vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -31,6 +32,21 @@ a{
     background-color: #222222;
     opacity: 0.8;
     position: absolute;
+}
+.overlay-close-btn{
+    cursor: pointer;
+    width: 100%;
+    margin: 20px 5px 0 0;
+    
+}
+.overlay-close-btn-img{
+    width: 18px;
+    height: 18px;
+    float: right;
+}
+.overlay-close-btn img{
+    width: 100%;
+    float: right;
 }
 .om-artist-grid-album-overlay-wrap{
     width: 1300px;
@@ -81,40 +97,10 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.album-overlay-img-wrap li{
     padding-bottom: 100%;
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
-}
-
-.overlay-close-btn{
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-    color: white;
-    letter-spacing: 2.22px;
-    display: flex;
-    justify-content: center;
-    font-family: Avenir;
-}
-
-.overlay-close-btn-img{
-    width: 16px;
-    height: 16px;
-    margin-right: 10px;
-}
-.overlay-close-btn img{
-    width: 100%;
-}
-.overlay-close-btn-span{
-    color: white;
-    text-align: center;
-    line-height: 27px;
-    font-size: 20px;
 }
 
 /* [강사님 그리드] */
@@ -158,11 +144,12 @@ a{
     cursor: pointer;
 }
 .om-choreographer-image-grid-artist-name a {
-    opacity: 0;
+    text-decoration:  none;
+    display: none;
 }
 
 /* [미디어쿼리] */
-@media (min-width: 320px) and (max-width: 767px){
+@media (min-width: 320px) and (max-width: 460px){
     .om-artist-grid-album-overlay-wrap{
         max-width: 1300px;
         width: 100%;
@@ -170,9 +157,12 @@ a{
     .om-artist-grid-album-overlay-album{
         max-width: 1300px;
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
     .om-artist-grid-album-overlay-prev{
         width: 5vw;
+        margin-left: 17px;
     }
     .om-artist-grid-album-overlay-prev img{
         width: 100%;
@@ -182,6 +172,118 @@ a{
     }
     .om-artist-grid-album-overlay-next{
         width: 5vw;
+        margin-right: 17px;
+    }
+    .om-artist-grid-album-overlay-next img{
+        width: 100%;
+    }
+}
+
+@media (min-width: 461px) and (max-width: 776px){
+    .om-artist-grid-album-overlay-wrap{
+        max-width: 1300px;
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-album{
+        max-width: 1300px;
+        width: 64vw;
+    }
+    .om-artist-grid-album-overlay-prev{
+        width: 5vw;
+        margin-left: 15px;
+    }
+    .om-artist-grid-album-overlay-prev img{
+        width: 100%;
+    }
+    .album-overlay-img-wrap{
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-next{
+        width: 5vw;
+        margin-right: 15px;
+    }
+    .om-artist-grid-album-overlay-next img{
+        width: 100%;
+    }
+}
+
+@media (min-width: 777px) and (max-width: 790px){
+    .om-artist-grid-album-overlay-wrap{
+        max-width: 1300px;
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-album{
+        max-width: 1300px;
+        width: 59vw;
+    }
+    .om-artist-grid-album-overlay-prev{
+        width: 5vw;
+        margin-left: 15px;
+    }
+    .om-artist-grid-album-overlay-prev img{
+        width: 100%;
+    }
+    .album-overlay-img-wrap{
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-next{
+        width: 5vw;
+        margin-right: 15px;
+    }
+    .om-artist-grid-album-overlay-next img{
+        width: 100%;
+    }
+}
+
+@media (min-width: 791px) and (max-width: 991px){
+    .om-artist-grid-album-overlay-wrap{
+        max-width: 1300px;
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-album{
+        max-width: 1300px;
+        width: 47vw;
+    }
+    .om-artist-grid-album-overlay-prev{
+        width: 40px;
+        margin-left: 15px;
+    }
+    .om-artist-grid-album-overlay-prev img{
+        width: 100%;
+    }
+    .album-overlay-img-wrap{
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-next{
+        width: 40px;
+        margin-right: 15px;
+    }
+    .om-artist-grid-album-overlay-next img{
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px){
+    .om-artist-grid-album-overlay-wrap{
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-album{
+        max-width: 1300px;
+        width: 34vw;
+    }
+    .om-artist-grid-album-overlay-prev{
+        width: 40px;
+        margin-left: 15px;
+    }
+    .om-artist-grid-album-overlay-prev img{
+        width: 100%;
+    }
+    .album-overlay-img-wrap{
+        width: 100%;
+    }
+    .om-artist-grid-album-overlay-next{
+        width: 40px;
+        margin-right: 15px;
     }
     .om-artist-grid-album-overlay-next img{
         width: 100%;
