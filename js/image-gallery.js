@@ -37,21 +37,18 @@ var image_gallery = (function () {
             ["#ffffff", "#141414"],
             ["#141414", "#ffffff"]
         ]
-        var artistsDataProfile = getArtistsData.profile;
 
         $(".om-choreographer-image-grid").mouseenter(function () {
             var colorCodeRandom = $(colorCode).get(Math.floor(Math.random() *2));
             $(this).find(".om-choreographer-image-grid-artist-name a").css("color", colorCodeRandom[1]);
-            $(this).find(".om-choreographer-image-grid-artist-name a").css("display", "block");
-            $(this).css("background-image", "none");
+            $(this).find(".om-choreographer-image-grid-artist-name a").css("opacity", 1);
             $(this).css("background-color", colorCodeRandom[0]);
+            $(this).addClass("om-bg-none");
         });
         
         $(".om-choreographer-image-grid").mouseleave(function () {
-            $(this).find(".om-choreographer-image-grid-artist-name a").css("display", "none");
-            $(this).css("background-image", artistsDataProfile);
-            $(this).css("background-color", "none");
-            console.log(artistsDataProfile);
+            $(this).find(".om-choreographer-image-grid-artist-name a").css("opacity", 0);
+            $(this).removeClass("om-bg-none");
         });
     }
 
